@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import {fetchSmurfs} from '../actions'
 
 class SmurfList extends React.Component{
     state = {}
@@ -9,4 +10,4 @@ class SmurfList extends React.Component{
     }
 }
 
-export default connect(null, {})(SmurfList);
+export default connect(null, {fetchSmurfs})(SmurfList);
