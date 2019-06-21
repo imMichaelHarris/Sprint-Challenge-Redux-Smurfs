@@ -14,4 +14,11 @@ class SmurfList extends React.Component{
     }
 }
 
-export default connect(null, {fetchSmurfs})(SmurfList);
+const mapStateToProps = ({smurfs, fetchingSmurfs}) => {
+    return {
+        smurfs,
+        fetchingSmurfs
+    }
+
+}
+export default connect(mapStateToProps, {fetchSmurfs})(SmurfList);
