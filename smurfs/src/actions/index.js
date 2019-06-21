@@ -17,4 +17,7 @@ export const FETCH_SMURFS_FAILED = "FETCH_SMURFS_FAILED"
 */
 export const fetchSmurfs = () => dispatch => {
   dispatch({type: FETCH_SMURFS_START})
+  axios.get('http://loaclhost:3333/smurfs')
+  .then(res => console.log(res))
+  .catch(err => console.log(err))
 }
