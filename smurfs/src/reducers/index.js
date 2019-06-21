@@ -7,7 +7,10 @@ import {
   ADD_SMURFS_FAILED,
   DELETING_SMURFS_START,
   DELETING_SMURFS_SUCCESS,
-  DELETING_SMUFS_FAILED
+  DELETING_SMUFS_FAILED,
+  UPDATING_SMURF_START,
+  UPDATING_SMURF_SUCCESS,
+  UPDATING_SMURF_FAILED
 } from "../actions";
 /*
  Your initial/default state for this project could *Although does not have to* look a lot like this
