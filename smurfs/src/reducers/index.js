@@ -1,5 +1,8 @@
-
-import {FETCH_SMURFS_START, FETCH_SMURFS_SUCCESS, FETCH_SMURFS_FAILED} from '../actions'
+import {
+  FETCH_SMURFS_START,
+  FETCH_SMURFS_SUCCESS,
+  FETCH_SMURFS_FAILED
+} from "../actions";
 /*
  Your initial/default state for this project could *Although does not have to* look a lot like this
  {
@@ -18,20 +21,32 @@ const initialState = {
   updatingSmurf: false,
   deletingSmurf: false,
   error: null
-}
+};
 
 export default (state = initialState, action) => {
-  switch(action.type){
+  switch (action.type) {
     case FETCH_SMURFS_START:
       return {
         ...state,
         fetchingSmurfs: true,
         error: null
-      }
+      };
+    case FETCH_SMURFS_SUCCESS:
+      return {
+        ...state,
+        fetchingSmurfs: false,
+        smurfs: action.payload
+      };
+    case FETCH_SMURFS_FAILED:
+      return {
+        ...state,
+        fetchingSmurfs: false,
+        error: `Couldn't fetch smurfs: ${action.payload}`
+      };
     default:
-      return state
+      return state;
   }
-}
+};
 
 /*
   You'll only need one smurf reducer for this project.
