@@ -1,7 +1,12 @@
 import React from 'react'
+import SmurfList from './SmurfList';
 
 const SmurfContainer = () => {
-    return <h1>Hi</h1>
+    return (
+        <div>
+            <SmurfList />
+        </div>
+    )
 }
 
 export default SmurfContainer
