@@ -10,6 +10,8 @@ class SmurfForm extends React.Component {
   };
 
   render() {
+    return (
+
     <div>
       <form>
         <label>Name:</label>
@@ -36,7 +38,8 @@ class SmurfForm extends React.Component {
           onChange={this.handleChanges}
         />
       </form>
-    </div>;
+    </div>
+    )
   }
 }
 
