@@ -31,6 +31,7 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
+    ////////////////////////////////////////////////////////////////////////////////////////////////////   FETCHING SMURFS                                ///////////////////////////
     case FETCH_SMURFS_START:
       return {
         ...state,
@@ -49,24 +50,31 @@ export default (state = initialState, action) => {
         fetchingSmurfs: false,
         error: `Couldn't fetch smurfs: ${action.payload}`
       };
+
+      ///////////////////////////////////////////////////////////////////////////////////////////////        ADDING SMURFS                      ///////////////////////////////////
     case ADD_SMURFS_START:
       return {
         ...state,
         addingSmurf: true,
         error: null
       };
-      case ADD_SMURFS_SUCCESS:
-        return {
-          ...state,
-          addingSmurf: false,
-          smurfs: action.payload
-        }
-        case ADD_SMURFS_FAILED:
-          return {
-            ...state,
-            addingSmurf: false,
-            error: `Couldn't add your smurf: ${action.payload}`
-          }
+    case ADD_SMURFS_SUCCESS:
+      return {
+        ...state,
+        addingSmurf: false,
+        smurfs: action.payload
+      };
+    case ADD_SMURFS_FAILED:
+      return {
+        ...state,
+        addingSmurf: false,
+        error: `Couldn't add your smurf: ${action.payload}`
+      };
+
+      ////////////////////////////////////////////////////////////////////////////////////////////////           DELETING SMURFS                        /////////////////////////////////
+      case DELETING_SMURFS_START:
+        console.log(action.payload)
+        break;
     default:
       return state;
   }
