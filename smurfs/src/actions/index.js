@@ -16,5 +16,5 @@ export const FETCH_SMURFS_FAILED = "FETCH_SMURFS_FAILED"
    D - deleteSmurf
 */
 export const fetchSmurfs = () => dispatch => {
-  dispatch({FETCH_SMURFS_START})
+  dispatch({type: FETCH_SMURFS_START})
 }
