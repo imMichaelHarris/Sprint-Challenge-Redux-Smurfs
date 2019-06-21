@@ -4,7 +4,10 @@ import {
   FETCH_SMURFS_FAILED,
   ADD_SMURFS_START,
   ADD_SMURFS_SUCCESS,
-  ADD_SMURFS_FAILED
+  ADD_SMURFS_FAILED,
+  DELETING_SMURFS_START,
+  DELETING_SMURFS_SUCCESS,
+  DELETING_SMUFS_FAILED
 } from "../actions";
 /*
  Your initial/default state for this project could *Although does not have to* look a lot like this
