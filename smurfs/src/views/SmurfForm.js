@@ -39,3 +39,5 @@ class SmurfForm extends React.Component {
     </div>;
   }
 }
+
+export default SmurfForm;
