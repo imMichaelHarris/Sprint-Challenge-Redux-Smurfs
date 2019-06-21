@@ -1,7 +1,4 @@
-/* 
-  Action Types Go Here!
-  Be sure to export each action type so you can pull it into your reducer
-*/
+
 export const FETCH_SMURFS_START = "FETCH_SMURFS_START"
 export const FETCH_SMURFS_SUCCESS = "FETCH_SMURFS_SUCCESS"
 export const FETCH_SMURFS_FAILED = "FETCH_SMURFS_FAILED"
