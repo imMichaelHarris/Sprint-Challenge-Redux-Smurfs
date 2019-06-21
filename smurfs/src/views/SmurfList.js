@@ -2,6 +2,8 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {fetchSmurfs} from '../actions'
 
+import Smurf from '../components/Smurf'
+
 class SmurfList extends React.Component{
     state = {}
 

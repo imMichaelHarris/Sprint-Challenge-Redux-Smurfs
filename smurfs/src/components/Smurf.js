@@ -1,11 +1,12 @@
 import React from 'react';
 
 const Smurf = props => {
+    const {name, age, height} = props.smurf
     return (
         <div>
-            <h2>Name</h2>
-            <p>Age</p>
-            <p>Height</p>
+            <h2>Name: {name}</h2>
+            <p>Age: {age}</p>
+            <p>Height: {height}</p>
         </div>
     )
 }
