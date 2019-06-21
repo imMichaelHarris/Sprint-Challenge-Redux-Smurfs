@@ -1,4 +1,6 @@
 import React from "react";
+import {connect} from 'react-redux';
+import {addSmurfToDb} from '../actions'
 
 class SmurfForm extends React.Component {
   state = {
@@ -57,4 +59,4 @@ class SmurfForm extends React.Component {
   }
 }
 
-export default SmurfForm;
+export default connect(null, {addSmurfToDb})(SmurfForm);
