@@ -46,6 +46,9 @@ export default (state = initialState, action) => {
         fetchingSmurfs: false,
         error: `Couldn't fetch smurfs: ${action.payload}`
       };
+      case ADD_SMURFS_START:
+        console.log('addSmurf starting in reducer')
+        break;
     default:
       return state;
   }
