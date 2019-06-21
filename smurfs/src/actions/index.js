@@ -47,3 +47,7 @@ export const addSmurfToDb = newSmurf => dispatch => {
 export const DELETING_SMURFS_START = "DELETING_SMURFS_START"
 export const DELETING_SMURFS_SUCCESS = "DELETING_SMURFS_SUCCESS"
 export const DELETING_SMUFS_FAILED = "DELETEING_SMURFS_FAILED"
+
+export const deleteSmurf = smurfId => dispatch => {
+  dispatch({type: DELETING_SMURFS_START})
+}
