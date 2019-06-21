@@ -6,7 +6,8 @@
 
 1.  What is the difference between Application state and Component state? When would be a good time to use one over the other?
     Application state is data that multiple components will most likely need to have access to for their features to work. Component state is state meant for only that component. If one component needs just that data it's most likely component state.
-    
+
 1.  What is middleware?
+    Middleware is needed to preform async actions in redux. Middleware is a third point added between the action being called and the reducer. It allows us to disptach different action types based on async actions like a fetch get request.
 1.  Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
 1.  Which `react-redux` method links up our `components` with our `redux store`?
