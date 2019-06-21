@@ -1,30 +1,38 @@
-import React from 'react'
-import {connect} from 'react-redux'
-import {fetchSmurfs} from '../actions'
+import React from "react";
+import { connect } from "react-redux";
+import { fetchSmurfs, deleteSmurf } from "../actions";
 
-import Smurf from '../components/Smurf'
+import Smurf from "../components/Smurf";
 
-class SmurfList extends React.Component{
-    state = {}
+class SmurfList extends React.Component {
+  state = {};
 
-    componentDidMount(){
-        this.props.fetchSmurfs()
-    }
+  componentDidMount() {
+    this.props.fetchSmurfs();
+  }
 
-    render(){
-        return (
-            <div className="smurf-list">
-                {this.props.smurfs.map(smurf => <Smurf smurf={smurf} key={smurf.id} /> )}
-            </div>
-        )
-    }
+  render() {
+    return (
+      <div className="smurf-list">
+        {this.props.smurfs.map(smurf => (
+          <Smurf
+            smurf={smurf}
+            key={smurf.id}
+            deleteSmurf={this.props.deleteSmurf}
+          />
+        ))}
+      </div>
+    );
+  }
 }
 
-const mapStateToProps = ({smurfs, fetchingSmurfs}) => {
-    return {
-        smurfs,
-        fetchingSmurfs
-    }
-
-}
-export default connect(mapStateToProps, {fetchSmurfs})(SmurfList);
+const mapStateToProps = ({ smurfs, fetchingSmurfs }) => {
+  return {
+    smurfs,
+    fetchingSmurfs
+  };
+};
+export default connect(
+  mapStateToProps,
+  { fetchSmurfs, deleteSmurf }
+)(SmurfList);
