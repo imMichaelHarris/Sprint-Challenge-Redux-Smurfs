@@ -37,6 +37,7 @@ class SmurfForm extends React.Component {
           value={this.state.newSmurf.height}
           onChange={this.handleChanges}
         />
+        <button>Add Smurf</button>
       </form>
     </div>
     )
