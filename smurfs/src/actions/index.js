@@ -25,3 +25,7 @@ export const fetchSmurfs = () => dispatch => {
       dispatch({type: FETCH_SMURFS_FAILED, payload: err.response})
     })
 };
+
+export const ADD_SMURFS_START = "ADD_SMURFS_START"
+export const ADD_SMURFS_SUCCESS = "ADD_SMURFS_SUCCESS"
+export const ADD_SMURFS_FAILED = "ADD_SMURFS_FAILED"
