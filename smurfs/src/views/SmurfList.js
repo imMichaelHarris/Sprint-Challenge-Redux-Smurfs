@@ -10,7 +10,12 @@ class SmurfList extends React.Component{
     }
 
     render(){
-        return <h1>SmurfList</h1>
+        console.log(this.props.smurfs)
+        return (
+            <div>
+                {this.props.smurfs.map(smurf => <Smurf smurf={smurf} /> )}
+            </div>
+        )
     }
 }
 
