@@ -20,14 +20,13 @@ class SmurfForm extends React.Component {
 
   addSmurf = e => {
     e.preventDefault()
-    console.log('boo')
   }
 
   render() {
     return (
 
     <div>
-      <form>
+      <form onSubmit={this.addSmurf}>
         <label>Name:</label>
         <input
           type="text"
