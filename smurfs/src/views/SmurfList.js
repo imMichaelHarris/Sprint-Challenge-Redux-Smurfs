@@ -5,6 +5,11 @@ import {fetchSmurfs} from '../actions'
 class SmurfList extends React.Component{
     state = {}
 
+    componentDidMount(){
+        console.log('start')
+        this.props.fetchSmurfs()
+    }
+
     render(){
         return <h1>SmurfList</h1>
     }
