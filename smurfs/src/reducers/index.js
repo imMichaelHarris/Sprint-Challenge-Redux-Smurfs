@@ -22,6 +22,9 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch(action.type){
+    case FETCH_SMURFS_START:
+      console.log('im starting in reducer')
+      break
     default:
       return state
   }
