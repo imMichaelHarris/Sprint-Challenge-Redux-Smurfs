@@ -29,3 +29,7 @@ export const fetchSmurfs = () => dispatch => {
 export const ADD_SMURFS_START = "ADD_SMURFS_START"
 export const ADD_SMURFS_SUCCESS = "ADD_SMURFS_SUCCESS"
 export const ADD_SMURFS_FAILED = "ADD_SMURFS_FAILED"
+
+export const addSmurfToDb = newSmurf => dispatch => {
+  dispatch({type: ADD_SMURFS_START})
+}
