@@ -25,6 +25,7 @@ export const fetchSmurfs = () => dispatch => {
       dispatch({type: FETCH_SMURFS_FAILED, payload: err.response})
     })
 };
+//////// ADDING SMURFS                                                  /////////////////////////////////////////////////////////////////
 
 export const ADD_SMURFS_START = "ADD_SMURFS_START"
 export const ADD_SMURFS_SUCCESS = "ADD_SMURFS_SUCCESS"
@@ -40,3 +41,9 @@ export const addSmurfToDb = newSmurf => dispatch => {
     dispatch({type: ADD_SMURFS_FAILED, payload: err.response})
   })
 }
+
+////////////    DELETING SMURFS                                   /////////////////////////////////////////////////////////////////////////////////
+
+export const DELETING_SMURFS_START = "DELETING_SMURFS_START"
+export const DELETING_SMURFS_SUCCESS = "DELETING_SMURFS_SUCCESS"
+export const DELETING_SMUFS_FAILED = "DELETEING_SMURFS_FAILED"

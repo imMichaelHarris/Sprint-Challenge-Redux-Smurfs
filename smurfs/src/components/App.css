@@ -2,6 +2,8 @@
   text-align: center;
 }
 .smurf-list {
+  display: flex;
+  flex-wrap: wrap;
   width: 60%;
   margin: 0 auto;
 }
