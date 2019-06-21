@@ -63,3 +63,15 @@ export const deleteSmurf = smurfId => dispatch => {
 export const UPDATING_SMURF_START = 'UPDATING_SMURF_START'
 export const UPDATING_SMURF_SUCCESS = "UPDATING_SMURF_SUCCESS"
 export const UPDATING_SMURF_FAILED = "UPDATING_SMURF_FAILED"
+
+export const updateSmurf = (smurfId, updatedSmurf) => dispatch => {
+  dispatch({type: UPDATING_SMURF_START})
+  axios.put(`http://localhost:3333/smurfs/${smurfId}`, updatedSmurf)
+  .then(res => {
+    console.log(res)
+    dispatch({type: UPDATING_SMURF_SUCCESS, payload: res.data})
+  })
+  .catch(err => {
+    dispatch({type: UPDATING_SMURF_FAILED, payload: err.response})
+  })
+}
