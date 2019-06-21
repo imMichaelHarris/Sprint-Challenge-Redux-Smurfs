@@ -1,4 +1,5 @@
 import React from 'react'
+import {connect} from 'react-redux'
 
 class SmurfList extends React.Component{
     state = {}
@@ -8,4 +9,4 @@ class SmurfList extends React.Component{
     }
 }
 
-export default SmurfList;
+export default connect(null, {})(SmurfList);
