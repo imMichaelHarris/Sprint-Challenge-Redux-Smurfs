@@ -12,9 +12,15 @@ class SmurfForm extends React.Component {
   handleChanges = e => {
       this.setState({
           newSmurf: {
+              ...this.state.newSmurf,
               [e.target.name]: e.target.value
           }
       })
+  }
+
+  addSmurf = e => {
+    e.preventDefault()
+    console.log('boo')
   }
 
   render() {
