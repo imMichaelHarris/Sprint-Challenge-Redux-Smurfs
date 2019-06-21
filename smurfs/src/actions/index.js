@@ -50,4 +50,11 @@ export const DELETING_SMUFS_FAILED = "DELETEING_SMURFS_FAILED"
 
 export const deleteSmurf = smurfId => dispatch => {
   dispatch({type: DELETING_SMURFS_START, payload: smurfId})
+  axios.delete(`http://localhost:3333/smurfs/${smurfId}`)
+  .then(res => {
+    dispatch({type: DELETING_SMURFS_SUCCESS, payload: res.data})
+  })
+  .catch(err => {
+    dispatch({type: DELETING_SMUFS_FAILED, payload: err.response})
+  })
 }
