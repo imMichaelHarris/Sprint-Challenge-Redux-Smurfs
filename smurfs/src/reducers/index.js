@@ -74,7 +74,9 @@ export default (state = initialState, action) => {
       ////////////////////////////////////////////////////////////////////////////////////////////////           DELETING SMURFS                        /////////////////////////////////
       case DELETING_SMURFS_START:
         console.log(action.payload)
-        break;
+        return {
+          ...state
+        }
     default:
       return state;
   }
