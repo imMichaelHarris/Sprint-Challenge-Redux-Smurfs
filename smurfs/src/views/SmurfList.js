@@ -6,7 +6,6 @@ class SmurfList extends React.Component{
     state = {}
 
     componentDidMount(){
-        console.log('start')
         this.props.fetchSmurfs()
     }
 
