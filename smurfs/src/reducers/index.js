@@ -52,6 +52,18 @@ export default (state = initialState, action) => {
         addingSmurf: true,
         error: null
       };
+      case ADD_SMURFS_SUCCESS:
+        return {
+          ...state,
+          addingSmurf: false,
+          smurfs: action.payload
+        }
+        case ADD_SMURFS_FAILED:
+          return {
+            ...state,
+            addingSmurf: false,
+            error: `Couldn't add your smurf: ${action.payload}`
+          }
     default:
       return state;
   }
