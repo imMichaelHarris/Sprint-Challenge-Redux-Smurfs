@@ -9,6 +9,14 @@ class SmurfForm extends React.Component {
     }
   };
 
+  handleChanges = e => {
+      this.setState({
+          newSmurf: {
+              [e.target.name]: e.target.value
+          }
+      })
+  }
+
   render() {
     return (
 
