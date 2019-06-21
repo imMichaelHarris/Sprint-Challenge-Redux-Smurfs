@@ -1,4 +1,13 @@
 .App {
   text-align: center;
 }
-
+.smurf-list {
+  width: 60%;
+  margin: 0 auto;
+}
+.smurf-card {
+  border: 1px solid #000;
+  width: 350px;
+  height: 150px;
+  margin: 10px;
+}
