@@ -9,5 +9,8 @@
 
 1.  What is middleware?
     Middleware is needed to preform async actions in redux. Middleware is a third point added between the action being called and the reducer. It allows us to disptach different action types based on async actions like a fetch get request.
+
 1.  Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+    Redux-thunk allos us to return a function instead of a pure action object. In javacript a thunk is when you wrap a statement in a function and call that function to get that specific statement. 
+    
 1.  Which `react-redux` method links up our `components` with our `redux store`?
