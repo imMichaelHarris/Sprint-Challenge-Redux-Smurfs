@@ -22,6 +22,7 @@ class SmurfForm extends React.Component {
 
   addSmurf = e => {
     e.preventDefault()
+    this.props.addSmurfToDb(this.state.newSmurf)
   }
 
   render() {

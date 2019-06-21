@@ -32,4 +32,11 @@ export const ADD_SMURFS_FAILED = "ADD_SMURFS_FAILED"
 
 export const addSmurfToDb = newSmurf => dispatch => {
   dispatch({type: ADD_SMURFS_START})
+  axios.post('http://localhost:3333/smurfs', newSmurf)
+  .then(res => {
+    console.log(res)
+  })
+  .catch(err => {
+    console.log(err)
+  })
 }

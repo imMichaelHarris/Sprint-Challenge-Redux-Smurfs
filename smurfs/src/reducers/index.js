@@ -4,7 +4,7 @@ import {
   FETCH_SMURFS_FAILED,
   ADD_SMURFS_START,
   ADD_SMURFS_SUCCESS,
-  ADD_SMURFS_FAILED,
+  ADD_SMURFS_FAILED
 } from "../actions";
 /*
  Your initial/default state for this project could *Although does not have to* look a lot like this
@@ -46,9 +46,12 @@ export default (state = initialState, action) => {
         fetchingSmurfs: false,
         error: `Couldn't fetch smurfs: ${action.payload}`
       };
-      case ADD_SMURFS_START:
-        console.log('addSmurf starting in reducer')
-        break;
+    case ADD_SMURFS_START:
+      return {
+        ...state,
+        addingSmurf: true,
+        error: null
+      };
     default:
       return state;
   }
