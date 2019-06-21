@@ -14,3 +14,6 @@ export const FETCH_SMURFS_FAILED = "FETCH_SMURFS_FAILED"
    U - updateSmurf
    D - deleteSmurf
 */
+export const fetchSmurfs = () => dispatch => {
+  
+}
