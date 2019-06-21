@@ -101,7 +101,8 @@ export default (state = initialState, action) => {
       };
     case UPDATING_SMURF_SUCCESS:
       return {
-        ...state
+        ...state,
+        smurfs: action.payload
       };
     case UPDATING_SMURF_FAILED:
       return {

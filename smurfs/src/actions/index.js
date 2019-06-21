@@ -38,7 +38,7 @@ export const addSmurfToDb = newSmurf => dispatch => {
     dispatch({ type: ADD_SMURFS_SUCCESS, payload: res.data})
   })
   .catch(err => {
-    dispatch({type: ADD_SMURFS_FAILED, payload: err.response})
+    dispatch({type: ADD_SMURFS_FAILED, payload: err.response.data.Error})
   })
 }
 

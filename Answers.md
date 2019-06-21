@@ -5,7 +5,7 @@
     The 'store' in Redux is the single source of truth because it will house all of our application data and it is very predictable because it can only be changed in one way - by using reducers. Reducers are pure functions that will determine how the next state of the redux store will look like. We tell our reducers to change the store based of different actions that we define. Actions are simply just an object that will have to have a 'type' property so our reducers will know how to change the store based on that property. These actions can also have additional properties like a 'payload' or 'data' to pass along more info to the reducer.
 
 1.  What is the difference between Application state and Component state? When would be a good time to use one over the other?
-    Application state is data that multiple components will most likely need to have access to for their features to work. Component state is state meant for only that component. If one component needs just that data it's most likely component state.
+    Application state is data that multiple components will most likely need to have access to for their features to work. Component state is state meant for only that component. If one component needs just that data it's most likely component state. Application state has the ablilty to pasas data to props component state styling UI elements and handling form data.
 
 1.  What is middleware?
     Middleware is needed to preform async actions in redux. Middleware is a third point added between the action being called and the reducer. It allows us to disptach different action types based on async actions like a fetch get request.
@@ -14,4 +14,4 @@
     Redux-thunk allows us to return a function instead of a pure action object. In javacript a thunk is when you wrap a statement in a function and call that function to get that specific statement. 
 
 1.  Which `react-redux` method links up our `components` with our `redux store`?
-    We can use the 'connect' function that links our components to the redux store. We call connect when we are exporting the component. First call takes two arguments, the function that gets the state items we need for that component (null if none are needed) and the action creator we want to invoke in that component. The second call is just the Component itself.
+    We can use the 'connect' function that links our components to the redux store. We call connect when we are exporting the component. First call takes two arguments, the function that gets the state items we need for that component (null if none are needed) and the action creator we want to invoke in that component. The second call is just the Component itself. The second takes all the stuff from the first call and the component itself and returning everythin in that one component.
