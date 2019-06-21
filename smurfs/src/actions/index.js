@@ -58,3 +58,8 @@ export const deleteSmurf = smurfId => dispatch => {
     dispatch({type: DELETING_SMUFS_FAILED, payload: err.response})
   })
 }
+
+//////////////      UPDATING SMURFS                              ////////////////////////////////////////////////////////
+export const UPDATING_SMURF_START = 'UPDATING_SMURF_START'
+export const UPDATING_SMURF_SUCCESS = "UPDATING_SMURF_SUCCESS"
+export const UPDATING_SMURF_FAILED = "UPDATING_SMURF_FAILED"
