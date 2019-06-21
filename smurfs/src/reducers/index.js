@@ -93,6 +93,20 @@ export default (state = initialState, action) => {
         deletingSmurf: false,
         error: `Seems that smurf doesn't exist: ${action.payload}`
       };
+
+    ////////////////////////////////////////////////////////////////////////////////////////////           UPDATING SMURFS                       ///////////////////////////////////
+    case UPDATING_SMURF_START:
+      return {
+        ...state
+      };
+    case UPDATING_SMURF_SUCCESS:
+      return {
+        ...state
+      };
+    case UPDATING_SMURF_FAILED:
+      return {
+        ...state
+      };
     default:
       return state;
   }
