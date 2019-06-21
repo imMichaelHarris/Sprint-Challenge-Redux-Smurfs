@@ -51,7 +51,7 @@ export default (state = initialState, action) => {
         error: `Couldn't fetch smurfs: ${action.payload}`
       };
 
-      ///////////////////////////////////////////////////////////////////////////////////////////////        ADDING SMURFS                      ///////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////        ADDING SMURFS                      ///////////////////////////////////
     case ADD_SMURFS_START:
       return {
         ...state,
@@ -71,12 +71,25 @@ export default (state = initialState, action) => {
         error: `Couldn't add your smurf: ${action.payload}`
       };
 
-      ////////////////////////////////////////////////////////////////////////////////////////////////           DELETING SMURFS                        /////////////////////////////////
-      case DELETING_SMURFS_START:
-        console.log(action.payload)
-        return {
-          ...state
-        }
+    ////////////////////////////////////////////////////////////////////////////////////////////////           DELETING SMURFS                        /////////////////////////////////
+    case DELETING_SMURFS_START:
+      return {
+        ...state,
+        deletingSmurf: true,
+        error: null
+      };
+    case DELETING_SMURFS_SUCCESS:
+      return {
+        ...state,
+        deletingSmurf: false,
+        smurfs: action.payload
+      };
+    case DELETING_SMUFS_FAILED:
+      return {
+        ...state,
+        deletingSmurf: false,
+        error: `Seems that smurf doesn't exist: ${action.payload}`
+      };
     default:
       return state;
   }
