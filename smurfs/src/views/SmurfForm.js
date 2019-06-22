@@ -7,6 +7,7 @@ class SmurfForm extends React.Component {
     newSmurf: this.props.newSmurf
   };
 
+  com;
   handleChanges = e => {
     this.setState({
       newSmurf: {
