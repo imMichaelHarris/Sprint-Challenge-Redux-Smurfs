@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchSmurfs, deleteSmurf, updateSmurf } from "../actions";
+import { fetchSmurfs, deleteSmurf, setForm } from "../actions";
 
 import Smurf from "../components/Smurf";
 
@@ -35,5 +35,5 @@ const mapStateToProps = ({ smurfs, fetchingSmurfs }) => {
 };
 export default connect(
   mapStateToProps,
-  { fetchSmurfs, deleteSmurf, updateSmurf }
+  { fetchSmurfs, deleteSmurf, setForm }
 )(SmurfList);
