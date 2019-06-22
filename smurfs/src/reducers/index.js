@@ -10,7 +10,8 @@ import {
   DELETING_SMUFS_FAILED,
   UPDATING_SMURF_START,
   UPDATING_SMURF_SUCCESS,
-  UPDATING_SMURF_FAILED
+  UPDATING_SMURF_FAILED,
+  SET_FORM
 } from "../actions";
 /*
  Your initial/default state for this project could *Although does not have to* look a lot like this
