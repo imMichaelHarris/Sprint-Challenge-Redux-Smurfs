@@ -101,10 +101,14 @@ export default (state = initialState, action) => {
       };
 
     ////////////////////////////////////////////////////////////////////////////////////////////           UPDATING SMURFS                       ///////////////////////////////////
-    case UPDATING_SMURF_START:
+    case SET_FORM:
       return {
         ...state,
         formData: action.payload
+      };
+    case UPDATING_SMURF_START:
+      return {
+        ...state
       };
     case UPDATING_SMURF_SUCCESS:
       return {

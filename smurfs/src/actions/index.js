@@ -19,59 +19,71 @@ export const fetchSmurfs = () => dispatch => {
   axios
     .get("http://localhost:3333/smurfs")
     .then(res => {
-      dispatch({type: FETCH_SMURFS_SUCCESS, payload: res.data})
+      dispatch({ type: FETCH_SMURFS_SUCCESS, payload: res.data });
     })
     .catch(err => {
-      dispatch({type: FETCH_SMURFS_FAILED, payload: err.response})
-    })
+      dispatch({ type: FETCH_SMURFS_FAILED, payload: err.response });
+    });
 };
 //////// ADDING SMURFS                                                  /////////////////////////////////////////////////////////////////
 
-export const ADD_SMURFS_START = "ADD_SMURFS_START"
-export const ADD_SMURFS_SUCCESS = "ADD_SMURFS_SUCCESS"
-export const ADD_SMURFS_FAILED = "ADD_SMURFS_FAILED"
+export const ADD_SMURFS_START = "ADD_SMURFS_START";
+export const ADD_SMURFS_SUCCESS = "ADD_SMURFS_SUCCESS";
+export const ADD_SMURFS_FAILED = "ADD_SMURFS_FAILED";
 
 export const addSmurfToDb = newSmurf => dispatch => {
-  dispatch({type: ADD_SMURFS_START})
-  axios.post('http://localhost:3333/smurfs', newSmurf)
-  .then(res => {
-    dispatch({ type: ADD_SMURFS_SUCCESS, payload: res.data})
-  })
-  .catch(err => {
-    dispatch({type: ADD_SMURFS_FAILED, payload: err.response.data.Error})
-  })
-}
+  dispatch({ type: ADD_SMURFS_START });
+  axios
+    .post("http://localhost:3333/smurfs", newSmurf)
+    .then(res => {
+      dispatch({ type: ADD_SMURFS_SUCCESS, payload: res.data });
+    })
+    .catch(err => {
+      dispatch({ type: ADD_SMURFS_FAILED, payload: err.response.data.Error });
+    });
+};
 
 ////////////    DELETING SMURFS                                   /////////////////////////////////////////////////////////////////////////////////
 
-export const DELETING_SMURFS_START = "DELETING_SMURFS_START"
-export const DELETING_SMURFS_SUCCESS = "DELETING_SMURFS_SUCCESS"
-export const DELETING_SMUFS_FAILED = "DELETEING_SMURFS_FAILED"
+export const DELETING_SMURFS_START = "DELETING_SMURFS_START";
+export const DELETING_SMURFS_SUCCESS = "DELETING_SMURFS_SUCCESS";
+export const DELETING_SMUFS_FAILED = "DELETEING_SMURFS_FAILED";
 
 export const deleteSmurf = smurfId => dispatch => {
-  dispatch({type: DELETING_SMURFS_START, payload: smurfId})
-  axios.delete(`http://localhost:3333/smurfs/${smurfId}`)
-  .then(res => {
-    dispatch({type: DELETING_SMURFS_SUCCESS, payload: res.data})
-  })
-  .catch(err => {
-    dispatch({type: DELETING_SMUFS_FAILED, payload: err.response})
-  })
-}
+  dispatch({ type: DELETING_SMURFS_START, payload: smurfId });
+  axios
+    .delete(`http://localhost:3333/smurfs/${smurfId}`)
+    .then(res => {
+      dispatch({ type: DELETING_SMURFS_SUCCESS, payload: res.data });
+    })
+    .catch(err => {
+      dispatch({ type: DELETING_SMUFS_FAILED, payload: err.response });
+    });
+};
 
 //////////////      UPDATING SMURFS                              ////////////////////////////////////////////////////////
-export const UPDATING_SMURF_START = 'UPDATING_SMURF_START'
-export const UPDATING_SMURF_SUCCESS = "UPDATING_SMURF_SUCCESS"
-export const UPDATING_SMURF_FAILED = "UPDATING_SMURF_FAILED"
+export const UPDATING_SMURF_START = "UPDATING_SMURF_START";
+export const UPDATING_SMURF_SUCCESS = "UPDATING_SMURF_SUCCESS";
+export const UPDATING_SMURF_FAILED = "UPDATING_SMURF_FAILED";
+
+export const SET_FORM = "SET_FORM";
+
+export const setForm = smurf => {
+  return {
+    type: SET_FORM,
+    payload: smurf
+  };
+};
 
 export const updateSmurf = (smurfId, updatedSmurf) => dispatch => {
-  dispatch({type: UPDATING_SMURF_START})
-  axios.put(`http://localhost:3333/smurfs/${smurfId}`, updatedSmurf)
-  .then(res => {
-    console.log(res)
-    dispatch({type: UPDATING_SMURF_SUCCESS, payload: res.data})
-  })
-  .catch(err => {
-    dispatch({type: UPDATING_SMURF_FAILED, payload: err.response})
-  })
-}
+  dispatch({ type: UPDATING_SMURF_START });
+  axios
+    .put(`http://localhost:3333/smurfs/${smurfId}`, updatedSmurf)
+    .then(res => {
+      console.log(res);
+      dispatch({ type: UPDATING_SMURF_SUCCESS, payload: res.data });
+    })
+    .catch(err => {
+      dispatch({ type: UPDATING_SMURF_FAILED, payload: err.response });
+    });
+};

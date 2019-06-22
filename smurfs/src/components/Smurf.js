@@ -1,9 +1,7 @@
 import React from "react";
-import { Link } from "react-rout";
 
 const Smurf = props => {
   const { name, age, height, id } = props.smurf;
-  console.log(props);
   return (
     <div className="smurf-card">
       <h3>Name: {name}</h3>

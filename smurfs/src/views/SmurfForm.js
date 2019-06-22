@@ -4,11 +4,7 @@ import { addSmurfToDb } from "../actions";
 
 class SmurfForm extends React.Component {
   state = {
-    newSmurf: {
-      name: "",
-      age: "",
-      height: ""
-    }
+    newSmurf: this.props.newSmurf
   };
 
   handleChanges = e => {
@@ -26,6 +22,7 @@ class SmurfForm extends React.Component {
   };
 
   render() {
+    console.log(this.props.newSmurf);
     return (
       <div>
         <form onSubmit={this.addSmurf}>
