@@ -28,6 +28,11 @@ const initialState = {
   fetchingSmurfs: false,
   addingSmurf: false,
   updatingSmurf: false,
+  formData: {
+    name: "",
+    age: "",
+    height: ""
+  },
   deletingSmurf: false,
   error: null
 };
@@ -97,7 +102,8 @@ export default (state = initialState, action) => {
     ////////////////////////////////////////////////////////////////////////////////////////////           UPDATING SMURFS                       ///////////////////////////////////
     case UPDATING_SMURF_START:
       return {
-        ...state
+        ...state,
+        formData: action.payload
       };
     case UPDATING_SMURF_SUCCESS:
       return {
