@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-rout";
 
 const Smurf = props => {
   const { name, age, height, id } = props.smurf;
@@ -9,7 +10,7 @@ const Smurf = props => {
       <p>Age: {age}</p>
       <p>Height: {height}</p>
       <button onClick={() => props.deleteSmurf(id)}>Delete</button>
-      <button onClick={() => props.updateSmurf(id, props.smurf)}>Update</button>
+      <button onClick={() => props.setForm(props.smurf)}>Update</button>
     </div>
   );
 };

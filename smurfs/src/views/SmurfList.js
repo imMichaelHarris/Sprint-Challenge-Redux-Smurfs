@@ -19,7 +19,7 @@ class SmurfList extends React.Component {
             smurf={smurf}
             key={smurf.id}
             deleteSmurf={this.props.deleteSmurf}
-            updateSmurf={this.props.updateSmurf}
+            setForm={this.props.setForm}
           />
         ))}
       </div>
