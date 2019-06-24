@@ -1,7 +1,18 @@
-/*
-  Be sure to import in all of the action types from `../actions`
-*/
-
+import {
+  FETCH_SMURFS_START,
+  FETCH_SMURFS_SUCCESS,
+  FETCH_SMURFS_FAILED,
+  ADD_SMURFS_START,
+  ADD_SMURFS_SUCCESS,
+  ADD_SMURFS_FAILED,
+  DELETING_SMURFS_START,
+  DELETING_SMURFS_SUCCESS,
+  DELETING_SMUFS_FAILED,
+  UPDATING_SMURF_START,
+  UPDATING_SMURF_SUCCESS,
+  UPDATING_SMURF_FAILED,
+  SET_FORM
+} from "../actions";
 /*
  Your initial/default state for this project could *Although does not have to* look a lot like this
  {
@@ -13,6 +24,105 @@
    error: null
  }
 */
+const initialState = {
+  smurfs: [],
+  fetchingSmurfs: false,
+  addingSmurf: false,
+  updatingSmurf: false,
+  formData: {
+    name: "",
+    age: "",
+    height: ""
+  },
+  deletingSmurf: false,
+  error: null
+};
+
+export default (state = initialState, action) => {
+  switch (action.type) {
+    ////////////////////////////////////////////////////////////////////////////////////////////////////   FETCHING SMURFS                                ///////////////////////////
+    case FETCH_SMURFS_START:
+      return {
+        ...state,
+        fetchingSmurfs: true,
+        error: null
+      };
+    case FETCH_SMURFS_SUCCESS:
+      return {
+        ...state,
+        fetchingSmurfs: false,
+        smurfs: action.payload
+      };
+    case FETCH_SMURFS_FAILED:
+      return {
+        ...state,
+        fetchingSmurfs: false,
+        error: `Couldn't fetch smurfs: ${action.payload}`
+      };
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////        ADDING SMURFS                      ///////////////////////////////////
+    case ADD_SMURFS_START:
+      return {
+        ...state,
+        addingSmurf: true,
+        error: null
+      };
+    case ADD_SMURFS_SUCCESS:
+      return {
+        ...state,
+        addingSmurf: false,
+        smurfs: action.payload
+      };
+    case ADD_SMURFS_FAILED:
+      return {
+        ...state,
+        addingSmurf: false,
+        error: `Couldn't add your smurf: ${action.payload}`
+      };
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////           DELETING SMURFS                        /////////////////////////////////
+    case DELETING_SMURFS_START:
+      return {
+        ...state,
+        deletingSmurf: true,
+        error: null
+      };
+    case DELETING_SMURFS_SUCCESS:
+      return {
+        ...state,
+        deletingSmurf: false,
+        smurfs: action.payload
+      };
+    case DELETING_SMUFS_FAILED:
+      return {
+        ...state,
+        deletingSmurf: false,
+        error: `Seems that smurf doesn't exist: ${action.payload}`
+      };
+
+    ////////////////////////////////////////////////////////////////////////////////////////////           UPDATING SMURFS                       ///////////////////////////////////
+    case SET_FORM:
+      return {
+        ...state,
+        formData: action.payload
+      };
+    case UPDATING_SMURF_START:
+      return {
+        ...state
+      };
+    case UPDATING_SMURF_SUCCESS:
+      return {
+        ...state,
+        smurfs: action.payload
+      };
+    case UPDATING_SMURF_FAILED:
+      return {
+        ...state
+      };
+    default:
+      return state;
+  }
+};
 
 /*
   You'll only need one smurf reducer for this project.
